@@ -1,385 +1,487 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toni Ferrari Juan | Game Programmer</title>
+    <meta name="description" content="Portfolio of Toni Ferrari Juan, game programmer. C++, Unity, graphics and custom game engines.">
+    <meta name="theme-color" content="#0a0b10">
+    <meta property="og:title" content="Toni Ferrari Juan | Game Programmer">
+    <meta property="og:description" content="C++, Unity, graphics and custom game engines. Selected projects and background.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%238b7cff'/%3E%3Cstop offset='1' stop-color='%232dd4ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%230a0b10'%3ETF%3C/text%3E%3C/svg%3E">
 
-    <script src="https://kit.fontawesome.com/13fdd4c97b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <script>
+        // Set theme + JS flag before first paint (avoids flash)
+        (function () {
+            var d = document.documentElement, t = null;
+            d.classList.add('js');
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            d.setAttribute('data-theme', t);
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Toni Ferrari Juan | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <header class="container">
-        <h1>
-            <span class="site-title">Toni Ferrari Juan</span>   
-            <span class ="site-description">Programmer</span>
-        </h1>
+    <!-- Inline SVG sprite -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></g></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10.5 5 5 5-5"/><path d="M5 19.5h14"/></g></symbol>
+        <symbol id="i-external" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></g></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></g></symbol>
+        <symbol id="i-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></g></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5"/><path d="m16 7 5 5-5 5"/><path d="m14 4-4 16"/></g></symbol>
+        <symbol id="i-tools" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></g></symbol>
+        <symbol id="i-dumbbell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12h10"/><rect x="3.5" y="7.5" width="3.5" height="9" rx="1"/><rect x="17" y="7.5" width="3.5" height="9" rx="1"/><path d="M1.5 10v4M22.5 10v4"/></g></symbol>
+        <symbol id="i-utensils" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v5a3 3 0 0 0 6 0V3M9 11v10"/><path d="M17.5 3c-2 1-3 4-3 7.5h3V21"/></g></symbol>
+    </svg>
 
-        <div class="social center">
-            <a class="linkedin" href="https://www.linkedin.com/in/toni-ferrari-juan-23966810b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a class="github" href="https://github.com/Kibium" target="_blank"><i class="fab fa-github"></i></a>
-            <a class="ig" href="https://netflix.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"></div>
+
+    <!-- ============ NAV ============ -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+            <a class="brand" href="#top" aria-label="Toni Ferrari Juan, back to top">
+                <span class="brand-mark">TF</span>
+                <span class="brand-name">Toni Ferrari</span>
+            </a>
+
+            <nav class="nav-links" id="nav-links" aria-label="Main">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Toggle theme">
+                    <svg class="i-sun"><use href="#i-sun"/></svg>
+                    <svg class="i-moon"><use href="#i-moon"/></svg>
+                </button>
+                <button class="icon-btn burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <span></span><span></span>
+                </button>
+            </div>
         </div>
-        
-        <p class="site-email">toniferrari87@gmail.com</p>
     </header>
 
-    <section class="about-me container">
+    <main id="main">
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="top">
+            <canvas id="bg" aria-hidden="true"></canvas>
+            <div class="hero-glow" aria-hidden="true"></div>
 
-        <div class="me center">
-            <h1>About me</h1>
-            <p class="cool-underline"></p>
-            <img class="my-face" src="img/cara.png" alt="a dude called Toni">
-
-            <p>Be welcome to my portfolio!</p>
- 
-            <p>I have a <b>Bachelor's Degree in Interactive Digital Content</b> at the <a href="https://enti.cat">University of Barcelona</a>,
-            and a <b>Master's Degree in Advanced Programming for AAA Video Games graduated</b> from <a href="https://www.talent.upc.edu/cat/">UPC School</a>. </p>
-        </div>
-        
-        <div class="path center">
-        
-            <div class="programming">
-                <h2>Programming Languages <i class="fas fa-code"></i></h2>
-
-                <div class="programming-icons center">
-                    <p>
-                        <i class="devicon-cplusplus-plain"></i>
-                        <i class="devicon-csharp-plain"></i>
-                        <i class="devicon-html5-plain"></i>
-                        <i class="devicon-css3-plain"></i>
-                        <i class="devicon-python-plain"></i>
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="pulse"></span> Open to new opportunities</p>
+                    <h1>
+                        <span class="hero-hi">Hi, I'm</span>
+                        <span class="grad">Toni Ferrari Juan</span>
+                    </h1>
+                    <p class="hero-role">
+                        <span id="typed" aria-live="off">Game programmer</span><span class="caret" aria-hidden="true"></span>
                     </p>
-                    
-                </div>
-               
-                <p>During the degree, I learned the basics of pure C and C++ and some C#.  Also, I've learnt other languages such as HTML5, CSS and Python on my own. </p>
-            </div>
-
-            <div class="tools">
-                <h2>Tools <i class="fas fa-cogs"></i></h2>
-
-                <div class="tools-icons">
-                   <p>
-                        <img src="img/uinty_icon.png" alt=""> </img>
-                        <i class="devicon-visualstudio-plain"></i>
-                        <i class="fa-brands fa-github"></i>
-                   </p>
-                </div>
-               
-               <p>During my degree I've worked with <b>Unity and Visual Studio</b>, using Github for version control.</p>
-               <p>At the master's degree I totally focused on <b>C++</b>, as the goal was to build a custom video game engine and a game with it
-                along my classmates.</p>
-           </div>
-
-           <div class="hobbies">
-                <h2>Hobbies <i class="far fa-lightbulb"></i></i></h2>
-                <div class="hobbies-icons">
-                    <p>
-                        <i class="fa-solid fa-computer"></i>
-                        <i class="fas fa-dumbbell"></i>
-                        <i class="fas fa-utensils"></i>
+                    <p class="hero-lead">
+                        I build games and the technology behind them: from 2D classics in C++ to a custom 3D engine,
+                        shaders and VR experiences in Unity.
                     </p>
-                </div>
-
-                <p>Computers have been my pasion since I was very little. These machines always have been a source of knowledge and entertainment for me!</p>
-                <p>I enjoy sports and currently I hit the gym 2 or 3 times a week.</p>
-                <p>Cooking and enjoying fine meals are my most enjoyable activities!</p>
-           </div>  
-       </div>
-
-    </section>
-
-    <section class="projects container">
-       
-        <div class="projects-header center">
-            <h1>Projects</h1>
-            <p class="cool-underline"></p>
-            <p>My studies have been focused in game development, for the most part using Unity, although I've also developed games with
-                C++ from scratch using libraries such as SDL2 and OpenGL.
-            </p>
-        </div>
-                     
-        <div class="project">  
-            <div class="gif-container">
-                <img class="gif" src="video/assteroids.gif" alt="">
-            </div>         
-            
-            <div class="info">
-                <h3>Asteroids</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2017</p> -->
-                <p>The classic Asteroids game implemented in C++ and SDL2.
-                    It was developed during my 2nd year at the degree.
-                    And also, its my first 2D game programmed from scratch.
-                </p>
-                <div class="contributions">
-                    <p><b>My contribution:</b></p>
-                    <ul>
-                        <li>Menu structure</li>
-                        <li>Asteroids and UFO spawn</li>
-                        <li>Spaceship movement</li>
-                        <li>Score System</li>
-                        <li>Ranking</li>
-                    </ul> 
-                  
-                </div>        
-                <p class="button"> <a href=" https://drive.google.com/open?id=112mfHo-EYOUk06vhaxmtLC-DAvsAmJhY"><i class="fas fa-download"></i> Download</a> </p>
-        
-            </div>
-
-            
-        </div>
-
-        <div class="reverse-project">  
-            <div>
-                <img class="gif" src="video/steering.gif" alt="">
-            </div>         
-            
-            <div class="info">
-                <h3>Steering Behaviors</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2017</p>-->
-                <p> A simple app where an IA uses diferent algorithms that simulate behaviors like,
-                    Seek an objective, Arrive to a goal, Flee from something, etc. Implemented with C++ and SDL2.
-                </p>
-                <p class="button"> <a class="github" href="https://github.com/JoanStinson/SteeringBehaviors"><i class="fab fa-github"></i> Github</a> </p>    
-            </div>
-        </div>
-
-        <div class="project">  
-            <div>
-                <img class="gif" src="video/pathfinding.gif" alt="">
-            </div>         
-            
-            <div class="info">
-                <h3>Pathfinding IA</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2018</p>-->
-                <p> An application that show how an IA uses different algorithms
-                    get to a point (goal) in a scene defined by cells.
-                   SDL2 was used to implement the graphic part.
-                </p>
-                <div class="contributions">
-                    <p><b>My contribution:</b></p>
-                    <ul>
-                        <li>Breadth First Search</li>
-                        <li>Greedy BFS</li>
-                        <li>Djikstra's Algorithm</li>
-                        <li>A*</li>
-                    </ul> 
-                   
-                </div>
-                <p class="button"> <a class="drive" href="https://drive.google.com/open?id=10iyCotEUsC2GUgv9wcWlWT1pCdClnMDE"><i class="fas fa-download"></i> Download</a> </p>
-
-               
-            </div>
-        </div>
-
-        <div class="reverse-project">  
-            <div>
-                <img class="gif" src="video/mesh.gif" alt="">
-            </div>         
-            
-            <div class="info">
-                <h3>Cloth Simulation</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2018</p>-->
-                <p> A cloth simulation using string physics with C++, OpenGL and ImGui.</p>
-                <p class="button"> <a class="github" href="https://github.com/JaumeC5/Mecanica-Mesh"><i class="fab fa-github"></i> Github</a> </p>
-
-               
-            </div>
-        </div>
-
-        <div class="project">  
-                
-            <div>
-                <img class="gif" src="video/legs.gif" alt="">
-            </div>  
-            
-            <div class="info">
-                <h3>Legs, don't fail me now!</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2018</p>-->
-                <p>A game made in 5 days with Unity.
-                    We're escaping a zombie apocalipsis using
-                    the phone accelerometer and collecting power-ups
-                    that will help us on the run.
-                </p>
-                <div class="contributions">
-                    <p><b>Features:</b></p>
-                    <ul>
-                        <li>Phone accelerometer to dodge obstacles</li>
-                        <li>Scaling dificulty</li>
-                        <li>Endless runner</li>
-                        <li>Power ups (Shield and coin attractor)</li>
-                        <li>Shop to improve power ups and coin value!</li>
- 
-                    </ul> 
-                </div>
-                <p class="button"> <a href="https://drive.google.com/open?id=1YKHXqYUmmDzxHtIGwFemi6xmdNCXCChk"><i class="fas fa-download"></i></i></i> Download</a> </p>     
-            </div>    
-
-        </div>
-               
-        <div class="reverse-project">  
-            <div>
-                <img class="gif" src="video/tall.gif" alt="">
-            </div>         
-            
-            <div class="info">
-                <h3>Ghost</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2019</p>-->
-                <p>A VR game made with Unity, developed as End of Degree project.
-                    The player embodies a samurai that has to defeat all enemy swordsmen.
-                    Mainly developed for Oculus Rift.
-                </p>
-                <div class="contributions">
-                    <p><b>My contribution:</b></p>
-                    <ul>
-                        <li>Particle systems</li>
-                        <li>Level design</li>
-                        <li>Object interactability</li>
-                        <li>Interactive tutorial</li>
-                        <li>Audio implementation (FMOD)</li>
-                        <li>Healing system (potions)</li>
-                        <li>Text display</li>
-                        <li>End of the game</li>
-                    </ul> 
-                </div>
-                <p class="button"> <a class="itchio" href="https://artictoni.itch.io/ghxst-ghost"><i class="fab fa-itch-io"></i> Itch.io</a> </p>        
-            </div>      
-        </div>
-
-        <div class="project">            
-            <div>
-                <img class="gif" src="video/zork.gif" alt="">
-            </div>  
-            
-            <div class="info">
-                <h3>Zork</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2019</p>-->
-                <p>Zork clone. Implemented in C++.
-                    I developed it as the Master's Degree acess test.                 
-                </p>
-
-                <div class="contributions">
-                    <p><b>Features:</b></p>
-                    <ul>
-                        <li>Command-based gameplay</li>
-                        <li>RPG battle system</li>
-                        <li>Item equipment</li>
-                        <li>Door system</li>
-                        <li>Interactions(Look, Open, Pick, Throw, Put, etc)</li>
-                    </ul> 
-                </div>
-                <p class="button"> <a class="github" href="https://github.com/Kibium/Zork"><i class="fab fa-github"></i> Github</a> </p>
-               
-            </div>    
-        </div>
-
-        <div class="reverse-project">  
-            <div>
-                <img src="img/engine.png" alt="">
-            </div>         
-            
-            <div class="info">
-                <h3>Little Orion Engine </h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2020</p>-->
-                <p>A C++ made Unity-like Game Engine made during the master's degree and a videogame made with the same.</p>
-                <div class="contributions">
-                    <p><b>My contribution:</b></p>  
-                    <ul>
-                        <li>Unity like controls</li>
-                        <li>Rendering pipeline</li>
-                        <li>Save-load scene with binaries</li>
-                    </ul> 
-                   
-                </div>
-                <p class="button"> <a class="github" href="https://oniongalaxy.github.io/engine/"><i class="fab fa-github"></i> Github</a> </p>        
-            </div>      
-        </div>
-
-        <div class="project">  
-            <div>
-                <img src="img/twinlight_souls.png" alt="">
-            </div>         
-            
-            <div class="info">
-                <h3>Twinlight Souls</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2020</p>-->
-                <p>A 3D beat'em up videogame implemented with C++ and the custom engine mentioned above!
-                    It was made during the 2020 promotion of the Master's degree in Advanced Programing for AAA Videogames.
-                </p>
-                <div class="contributions">
-                    <p><b>My contribution:</b></p>
-                    <ul>
-                        <li>
-                            Make it good-looking: PBR, Shadow maps, Normal maps
-                        </li>
-                        <li>Enemy designer</li>
-                        <li>InGame Cinematics</li>
-                        <li>Post process: Bloom + Tonemapping + Gamma Correction</li>
+                    <p class="hero-lead">
+                        I also love everything related to computers: building and taking them apart, setting up servers
+                        and developing AI applications. My latest one is a personal AI agent that can play Spotify,
+                        give me the weather report, read the latest news and more.
+                    </p>
+                    <div class="hero-cta">
+                        <a class="btn btn-primary btn-lg" href="#projects">See my work <svg><use href="#i-arrow"/></svg></a>
+                        <a class="btn btn-ghost btn-lg" href="#contact">Get in touch</a>
+                    </div>
+                    <ul class="socials" aria-label="Social links">
+                        <li><a href="https://github.com/Kibium" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a></li>
+                        <li><a href="https://www.linkedin.com/in/toni-ferrari-juan-23966810b/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a></li>
+                        <li><a href="mailto:toniferrari1997@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a></li>
                     </ul>
                 </div>
-                <p class="button"> <a class="github" href="https://oniongalaxy.github.io/"><i class="fab fa-github"></i> Github</a> </p>        
-            </div>      
-        </div>
 
-        <div class="reverse-project">            
-            <div>
-                <img src="img/tigris.PNG" alt="">
-            </div>  
-            
-            <div class="info">
-                <h3>Tigris and Euphrates</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2021</p>-->
-                <p>A C++ based windows console game made from the popular board game!</p>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="code-window" data-tilt>
+                        <div class="code-bar"><i></i><i></i><i></i><span>main.cpp</span></div>
+<pre><code><span class="c">// the heart of every game</span>
+<span class="k">int</span> <span class="f">main</span>() {
+    <span class="t">Engine</span> engine;
+    engine.<span class="f">init</span>();
 
-                <div class="contributions">
-                    <p><b>Features:</b></p>
-                    <ul>
-                        <li>Simple board map using alphabetic characters</li>
-                        <li>Command-based gameplay</li>
-                        <li>Place tokens such as Temples, Farms, Leaders, Monuments, etc</li>
-                        <li>Wars</li>
-                        <li>Help commands anytime to know what to do!</li>
-                    </ul> 
+    <span class="k">while</span> (engine.<span class="f">running</span>()) {
+        engine.<span class="f">update</span>(dt);
+        engine.<span class="f">render</span>();
+    }
+    <span class="k">return</span> <span class="n">0</span>;
+}</code></pre>
+                    </div>
                 </div>
-                <p class="button"> <a class="github" href="https://github.com/tonifj/Tigris-and-Euphrates"><i class="fab fa-github"></i> Github</a> </p>
-               
-            </div>    
-        </div>
+            </div>
 
-        <div class="project">  
-            <div>
-                <img src="img/shadertoy.png" alt="">
-            </div>         
-            
-            <div class="info">
-                <h3>Shaders</h3>
-                <p class="cool-underline"></p>
-                <!--<p class="year">2020</p>-->
-                <p>Shaders I developed with a coleague for an assignment at the university</p>
-                <a href=""></a>
-                <p class="button"> <a href="https://www.shadertoy.com/results?query=TFerrari"><i class="fa-solid fa-cube"></i> Shadertoy</a> </p>        
-            </div>      
-        </div>
-      
-    </section>
+            <a class="scroll-hint" href="#about" aria-label="Scroll to About"><svg><use href="#i-down"/></svg></a>
+        </section>
 
-    
+        <!-- ============ ABOUT ============ -->
+        <section class="section" id="about">
+            <div class="container about-grid">
+                <div class="about-photo reveal">
+                    <div class="photo-frame" data-tilt>
+                        <img src="media/me.webp" width="760" height="760" alt="Portrait of Toni" loading="lazy" decoding="async">
+                    </div>
+                </div>
+
+                <div class="about-copy">
+                    <p class="eyebrow reveal">About me</p>
+                    <h2 class="reveal">Be welcome to my portfolio!</h2>
+                    <p class="lead reveal">
+                        Computers have been my passion since I was very little. They have always been a source of
+                        knowledge and entertainment for me, and now they're my craft.
+                    </p>
+
+                    <div class="edu reveal">
+                        <article class="edu-item spot">
+                            <span class="edu-dot"></span>
+                            <h3>Bachelor's Degree in Interactive Digital Content</h3>
+                            <p><a href="https://enti.cat" target="_blank" rel="noopener">ENTI, University of Barcelona</a></p>
+                        </article>
+                        <article class="edu-item spot">
+                            <span class="edu-dot"></span>
+                            <h3>Master's Degree in Advanced Programming for AAA Video Games</h3>
+                            <p><a href="https://www.talent.upc.edu/cat/" target="_blank" rel="noopener">UPC School</a></p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SKILLS ============ -->
+        <section class="section alt" id="skills">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Skills</p>
+                    <h2>What I work with</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><svg><use href="#i-code"/></svg></div>
+                        <h3>Programming languages</h3>
+                        <ul class="chips">
+                            <li>C++</li><li>C#</li><li>C</li><li>HTML5</li><li>CSS</li><li>Python</li>
+                        </ul>
+                        <p>During my degree I learned the basics of pure C and C++ and some C#. I've also learned HTML5, CSS and Python on my own.</p>
+                    </article>
+
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><svg><use href="#i-tools"/></svg></div>
+                        <h3>Tools &amp; libraries</h3>
+                        <ul class="chips">
+                            <li>Unity</li><li>Visual Studio</li><li>GitHub</li><li>SDL2</li><li>OpenGL</li><li>ImGui</li><li>FMOD</li><li>AI</li><li>SQL</li>
+                        </ul>
+                        <p>At university I worked with <b>Unity and Visual Studio</b>, using GitHub for version control. The master's was entirely focused on <b>C++</b>: we built a custom game engine and a game with it, together with my classmates.</p>
+                    </article>
+
+                    <article class="skill-card spot reveal">
+                        <div class="skill-icon"><svg><use href="#i-dumbbell"/></svg></div>
+                        <h3>Beyond the code</h3>
+                        <ul class="chips">
+                            <li>Computers</li><li>Gym</li><li>Cooking</li>
+                        </ul>
+                        <p>I enjoy sports and hit the gym two or three times a week. Cooking and enjoying fine meals are among my favourite activities!</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROJECTS ============ -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Projects</p>
+                    <h2>Things I've built</h2>
+                    <p class="section-sub">
+                        My studies focused on game development, mostly with Unity, although I've also developed games in C++
+                        from scratch using libraries such as SDL2 and OpenGL.
+                    </p>
+                </div>
+
+                <div class="filters reveal" role="group" aria-label="Filter projects">
+                    <button class="chip-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="chip-btn" type="button" data-filter="cpp" aria-pressed="false">C++</button>
+                    <button class="chip-btn" type="button" data-filter="unity" aria-pressed="false">Unity</button>
+                    <button class="chip-btn" type="button" data-filter="graphics" aria-pressed="false">Graphics</button>
+                    <button class="chip-btn" type="button" data-filter="ai" aria-pressed="false">AI</button>
+                    <span class="filter-count" id="filter-count" aria-live="polite"></span>
+                </div>
+
+                <div class="cards" id="cards">
+
+                    <!-- Asteroids -->
+                    <article class="card spot" data-tags="cpp">
+                        <div class="card-media"><video muted loop playsinline preload="none" poster="media/assteroids.webp" data-src="media/assteroids.mp4" aria-label="Asteroids gameplay"></video></div>
+                        <div class="card-body">
+                            <h3>Asteroids</h3>
+                            <ul class="tags"><li>C++</li><li>SDL2</li></ul>
+                            <p class="desc">The classic Asteroids game implemented in C++ and SDL2. It was developed during my 2nd year of the degree, and it's my first 2D game programmed from scratch.</p>
+                            <div class="contrib"><h4>My contribution</h4><ul>
+                                <li>Menu structure</li>
+                                <li>Asteroid and UFO spawning</li>
+                                <li>Spaceship movement</li>
+                                <li>Score system</li>
+                                <li>Ranking</li>
+                            </ul></div>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://drive.google.com/open?id=112mfHo-EYOUk06vhaxmtLC-DAvsAmJhY" target="_blank" rel="noopener">Download <svg><use href="#i-download"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Steering -->
+                    <article class="card spot" data-tags="cpp ai">
+                        <div class="card-media"><video muted loop playsinline preload="none" poster="media/steering.webp" data-src="media/steering.mp4" aria-label="Steering behaviors demo"></video></div>
+                        <div class="card-body">
+                            <h3>Steering Behaviors</h3>
+                            <ul class="tags"><li>C++</li><li>SDL2</li><li>AI</li></ul>
+                            <p class="desc">A simple app where an AI uses different algorithms that simulate behaviors such as seeking an objective, arriving at a goal, fleeing from something, etc. Implemented with C++ and SDL2.</p>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://github.com/JoanStinson/SteeringBehaviors" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Pathfinding -->
+                    <article class="card spot" data-tags="cpp ai">
+                        <div class="card-media"><video muted loop playsinline preload="none" poster="media/pathfinding.webp" data-src="media/pathfinding.mp4" aria-label="Pathfinding AI demo"></video></div>
+                        <div class="card-body">
+                            <h3>Pathfinding AI</h3>
+                            <ul class="tags"><li>C++</li><li>SDL2</li><li>AI</li></ul>
+                            <p class="desc">An application that shows how an AI uses different algorithms to reach a goal in a scene defined by cells. SDL2 was used for the graphics.</p>
+                            <div class="contrib"><h4>My contribution</h4><ul>
+                                <li>Breadth First Search</li>
+                                <li>Greedy BFS</li>
+                                <li>Dijkstra's algorithm</li>
+                                <li>A*</li>
+                            </ul></div>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://drive.google.com/open?id=10iyCotEUsC2GUgv9wcWlWT1pCdClnMDE" target="_blank" rel="noopener">Download <svg><use href="#i-download"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Cloth -->
+                    <article class="card spot" data-tags="cpp graphics">
+                        <div class="card-media"><video muted loop playsinline preload="none" poster="media/mesh.webp" data-src="media/mesh.mp4" aria-label="Cloth simulation demo"></video></div>
+                        <div class="card-body">
+                            <h3>Cloth Simulation</h3>
+                            <ul class="tags"><li>C++</li><li>OpenGL</li><li>ImGui</li></ul>
+                            <p class="desc">A cloth simulation using spring physics, built with C++, OpenGL and ImGui.</p>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://github.com/JaumeC5/Mecanica-Mesh" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Legs -->
+                    <article class="card spot" data-tags="unity">
+                        <div class="card-media"><video muted loop playsinline preload="none" poster="media/legs.webp" data-src="media/legs.mp4" aria-label="Legs, don't fail me now gameplay"></video></div>
+                        <div class="card-body">
+                            <h3>Legs, don't fail me now!</h3>
+                            <ul class="tags"><li>Unity</li><li>Mobile</li></ul>
+                            <p class="desc">A game made in 5 days with Unity. We're escaping a zombie apocalypse using the phone's accelerometer and collecting power-ups that help us on the run.</p>
+                            <div class="contrib"><h4>Features</h4><ul>
+                                <li>Phone accelerometer to dodge obstacles</li>
+                                <li>Scaling difficulty</li>
+                                <li>Endless runner</li>
+                                <li>Power-ups (shield and coin attractor)</li>
+                                <li>Shop to improve power-ups and coin value!</li>
+                            </ul></div>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://drive.google.com/open?id=1YKHXqYUmmDzxHtIGwFemi6xmdNCXCChk" target="_blank" rel="noopener">Download <svg><use href="#i-download"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Ghost -->
+                    <article class="card spot" data-tags="unity">
+                        <div class="card-media"><video muted loop playsinline preload="none" poster="media/tall.webp" data-src="media/tall.mp4" aria-label="Ghost gameplay"></video></div>
+                        <div class="card-body">
+                            <h3>Ghost</h3>
+                            <ul class="tags"><li>Unity</li><li>VR</li><li>FMOD</li></ul>
+                            <p class="desc">A VR game made with Unity, developed as my End of Degree project. The player embodies a samurai who has to defeat all enemy swordsmen. Mainly developed for Oculus Rift.</p>
+                            <div class="contrib"><h4>My contribution</h4><ul>
+                                <li>Particle systems</li>
+                                <li>Level design</li>
+                                <li>Object interactability</li>
+                                <li>Interactive tutorial</li>
+                                <li>Audio implementation (FMOD)</li>
+                                <li>Healing system (potions)</li>
+                                <li>Text display</li>
+                                <li>End of the game</li>
+                            </ul></div>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://artictoni.itch.io/ghxst-ghost" target="_blank" rel="noopener">Itch.io <svg><use href="#i-external"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Zork -->
+                    <article class="card spot" data-tags="cpp">
+                        <div class="card-media"><video muted loop playsinline preload="none" poster="media/zork.webp" data-src="media/zork.mp4" aria-label="Zork gameplay"></video></div>
+                        <div class="card-body">
+                            <h3>Zork</h3>
+                            <ul class="tags"><li>C++</li><li>Text adventure</li></ul>
+                            <p class="desc">A Zork clone implemented in C++. I developed it as the Master's Degree access test.</p>
+                            <div class="contrib"><h4>Features</h4><ul>
+                                <li>Command-based gameplay</li>
+                                <li>RPG battle system</li>
+                                <li>Item equipment</li>
+                                <li>Door system</li>
+                                <li>Interactions (look, open, pick, throw, put, etc.)</li>
+                            </ul></div>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://github.com/Kibium/Zork" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Little Orion Engine -->
+                    <article class="card spot" data-tags="cpp graphics">
+                        <div class="card-media"><img src="media/engine.webp" width="1280" height="693" alt="Little Orion Engine editor screenshot" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Little Orion Engine</h3>
+                            <ul class="tags"><li>C++</li><li>OpenGL</li><li>Engine</li></ul>
+                            <p class="desc">A Unity-like game engine made in C++ during the master's degree, plus a videogame made with it.</p>
+                            <div class="contrib"><h4>My contribution</h4><ul>
+                                <li>Unity-like controls</li>
+                                <li>Rendering pipeline</li>
+                                <li>Save/load scenes with binaries</li>
+                            </ul></div>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://oniongalaxy.github.io/engine/" target="_blank" rel="noopener">Website <svg><use href="#i-external"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Twinlight Souls -->
+                    <article class="card spot" data-tags="cpp graphics">
+                        <div class="card-media"><img src="media/twinlight_souls.webp" width="1280" height="678" alt="Twinlight Souls screenshot" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Twinlight Souls</h3>
+                            <ul class="tags"><li>C++</li><li>Custom engine</li><li>PBR</li></ul>
+                            <p class="desc">A 3D beat'em up videogame implemented with C++ and the custom engine mentioned above! It was made during the 2020 promotion of the Master's Degree in Advanced Programming for AAA Videogames.</p>
+                            <div class="contrib"><h4>My contribution</h4><ul>
+                                <li>Make it good-looking: PBR, shadow maps, normal maps</li>
+                                <li>Enemy designer</li>
+                                <li>In-game cinematics</li>
+                                <li>Post process: Bloom + Tonemapping + Gamma Correction</li>
+                            </ul></div>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://oniongalaxy.github.io/" target="_blank" rel="noopener">Website <svg><use href="#i-external"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Tigris -->
+                    <article class="card spot" data-tags="cpp">
+                        <div class="card-media"><img src="media/tigris.webp" width="984" height="738" alt="Tigris and Euphrates console game" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Tigris and Euphrates</h3>
+                            <ul class="tags"><li>C++</li><li>Console</li></ul>
+                            <p class="desc">A C++ based Windows console game made from the popular board game!</p>
+                            <div class="contrib"><h4>Features</h4><ul>
+                                <li>Simple board map using alphabetic characters</li>
+                                <li>Command-based gameplay</li>
+                                <li>Place tokens such as temples, farms, leaders, monuments, etc.</li>
+                                <li>Wars</li>
+                                <li>Help commands at any time to know what to do!</li>
+                            </ul></div>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://github.com/tonifj/Tigris-and-Euphrates" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Shaders -->
+                    <article class="card spot" data-tags="graphics">
+                        <div class="card-media"><img src="media/shadertoy.webp" width="1280" height="670" alt="Shadertoy shader preview" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Shaders</h3>
+                            <ul class="tags"><li>GLSL</li><li>Shadertoy</li></ul>
+                            <p class="desc">Shaders I developed with a colleague for a university assignment.</p>
+                            <div class="card-actions">
+                                <button class="btn btn-ghost" type="button" data-open>Details</button>
+                                <a class="btn btn-primary" href="https://www.shadertoy.com/results?query=TFerrari" target="_blank" rel="noopener">Shadertoy <svg><use href="#i-external"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <div class="contact-card reveal">
+                    <p class="eyebrow">Contact</p>
+                    <h2>Let's build something together</h2>
+                    <p class="section-sub">Got a project, an opportunity or just want to say hi? My inbox is open.</p>
+                    <div class="hero-cta">
+                        <a class="btn btn-primary btn-lg" href="mailto:toniferrari1997@gmail.com"><svg><use href="#i-mail"/></svg> toniferrari1997@gmail.com</a>
+                        <button class="btn btn-ghost btn-lg" type="button" id="copy-email" data-email="toniferrari1997@gmail.com">Copy email</button>
+                    </div>
+                    <ul class="socials center" aria-label="Social links">
+                        <li><a href="https://github.com/Kibium" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg></a></li>
+                        <li><a href="https://www.linkedin.com/in/toni-ferrari-juan-23966810b/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year">2026</span> Toni Ferrari Juan</p>
+            <a href="#top">Back to top <svg style="transform:rotate(-90deg)"><use href="#i-arrow"/></svg></a>
+        </div>
+    </footer>
+
+    <!-- Project details modal -->
+    <dialog class="modal" id="modal" aria-labelledby="modal-title">
+        <button class="icon-btn modal-close" type="button" aria-label="Close" data-close><svg><use href="#i-close"/></svg></button>
+        <div class="modal-media" id="modal-media"></div>
+        <div class="modal-body">
+            <h3 id="modal-title"></h3>
+            <ul class="tags" id="modal-tags"></ul>
+            <p class="desc" id="modal-desc"></p>
+            <div id="modal-contrib"></div>
+            <div class="card-actions" id="modal-actions"></div>
+        </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
